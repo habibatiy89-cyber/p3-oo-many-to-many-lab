@@ -9,14 +9,6 @@ class Book:
         self.title = title
         Book.all.append(self)
 
-    def contracts(self):
-        """Return a list of contracts associated with this book"""
-        return [contract for contract in Contract.all if contract.book == self]
-
-    def authors(self):
-        """Return a list of authors associated with this book via contracts"""
-        return [contract.author for contract in self.contracts()]
-
 
 class Author:
     all = []
